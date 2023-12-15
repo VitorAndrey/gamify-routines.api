@@ -1,7 +1,14 @@
-import { JsonValue } from "@prisma/client/runtime/library";
-
 export type Task = {
-  id: JsonValue;
+  id: string;
   name: string;
-  price: JsonValue;
+  price: number;
+};
+
+export type User = {
+  id: string;
+  name: string;
+};
+
+export type Planning = {
+  id: string;
 };

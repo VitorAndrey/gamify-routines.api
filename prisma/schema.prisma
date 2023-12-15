@@ -7,14 +7,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model plannings {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+model User {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+
+  @@map("users")
 }
 
-model tasks {
-  /// Multiple data types found: String (ObjectId): 91.7%, Int: 8.3% out of 12 sampled entries
-  id    Json   @id @map("_id")
+model Planning {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  @@map("plannings")
+}
+
+model Task {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
   name  String
-  /// Multiple data types found: Float: 16.7%, Int: 83.3% out of 6 sampled entries
-  price Json?
+  price Int
+
+  @@map("tasks")
 }
