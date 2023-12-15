@@ -7,6 +7,6 @@ export const app = fastify();
 app.register(appRoutes);
 
 app.register(cors, {
-  origin: "framercanvas.com",
+  origin: "*",
   methods: ["POST", "GET", "PUT"],
 });
