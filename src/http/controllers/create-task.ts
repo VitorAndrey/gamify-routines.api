@@ -6,7 +6,7 @@ import { TaskService } from "../services/tasks-service";
 export async function createTask(request: FastifyRequest, reply: FastifyReply) {
   const getTasksBodySchema = z.object({
     name: z.string(),
-    price: z.number(),
+    price: z.coerce.number(),
   });
 
   const { name, price } = getTasksBodySchema.parse(request.body);
